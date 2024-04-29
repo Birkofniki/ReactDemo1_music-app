@@ -14,7 +14,7 @@ class App extends React.Component{
     super(props)
   
     this.state = {
-       SearchResults:[],
+       searchResults:[],
        playlistName: "New playlist",
        playlistTracks: []
     };
@@ -22,9 +22,9 @@ class App extends React.Component{
     this.search= this.search.bind(this);
     this.addTrack= this.addTrack.bind(this);
     this.removeTrack= this.removeTrack.bind(this);
-    this.updatePlaylistName= this.updatePlaylistName.bind(this);
-    this.savePlaylistName= this.savePlaylistName.bind(this);
     this.removeTrackSearch= this.removeTrackSearch.bind(this);
+    this.updatePlaylistName= this.updatePlaylistName.bind(this);
+    this.savePlaylistName= this.savePlaylistName.bind(this);    
     this.doThese= this.doThese.bind(this);
 
   }
@@ -51,9 +51,18 @@ class App extends React.Component{
 
    removeTrack(track){
     let tracks= this.state.playlistTracks;
-    
+    let trackSearch= this.state.searchResults;
+    tracks= tracks.filter(currentTrack => currentTrack.id !== track.id) ;
+    trackSearch.unshift(track);
+    this.setState({playlistTracks: tracks});    
 
    }
+ //end of defining the 3rd function on the list; the "removeTrack function"
+  removeTrackSearch(track){
+    let tracks= this.state.searchResults;
+    tracks=tracks.filter(currentTrack => currentTrack.id !== track.id);
+    this.setState({searchResults:tracks});
+  }
 
 
 }
