@@ -3,7 +3,7 @@ import './App.css';
 import Playlist from "../Playlist/Playlist";
 import searchBar from ".//searchBar/searchBar";
 import searchResults from ".//searchResults/searchResults";
-import Sportify from "../util/Sportify";
+import Spotify from "../util/Spotify";
 
 //End of all our components, each component works on a specific task as named
 
@@ -63,9 +63,34 @@ class App extends React.Component{
     tracks=tracks.filter(currentTrack => currentTrack.id !== track.id);
     this.setState({searchResults:tracks});
   }
+//end of defining the 4th function on the list; the "removeTrackSearch function"
 
+  doThese(){
+    this.addTrack(track);
+    this.removeTrackSearch(track); // This can add and also remove tracks    
+
+  }
+//end of defining the 7th function on the list; the "doThese function", started with it coz it uses the (track) parameter.
+
+  updatePlaylistName(name){
+    this.setState({updatePlaylistName: name});
+  }
+//end of defining the 6th function on the list; the "updatePlaylistName function",it uses the (name) parameter.
+
+  savePlaylist(){
+    const trackUris = this.state.playlistTracks.map(track.uri);
+    Spotify.savePlaylist(this.state.playlistName, trackUris).then( ()=> {
+      this.setState({
+        updatePlaylistName: "New Playlist",
+        playlisttracks: []
+      });
+    })
+
+  }
 
 }
+
+//End of 'class App extends React.Component'
 
 function App() {
   return (
