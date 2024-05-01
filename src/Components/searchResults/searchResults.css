@@ -5,18 +5,17 @@
     padding: 0.88rem;
     background-color: rgba(95,23,23,0.7);
     box-shadow: 0 4px 2px 2px #000000;
+}
 
-    ::-webkit-scrollbar{
-        width: 0px;
-        background: transparent;
-    }
+::-webkit-scrollbar{
+    width: 0px;
+    background: transparent; /*for browsers like firefox, chrome, etc.*/
+}
 
-    @media only screen and (max-width: 1020px){
-        .searchResults{
-            width: 90%;
-            margin-bottom: 2rem;
-
-        }
+@media only screen and (max-width: 1020px){
+    .searchResults{
+        width: 90%;
+        margin-bottom: 2rem;
     }
 }
 
