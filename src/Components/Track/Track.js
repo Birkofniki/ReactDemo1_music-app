@@ -1,24 +1,21 @@
 import React from "react";
 import "./Track.css";
 
-class searchBar extends React.Element{
+class Track extends React.Element{
     constructor(props) {
-      super(props)
-    
-      this.state = {
-         term:""
-      }; //A constructor passing props to the super class constructor
-      this.addTrack= this.addTrack.bind(this);
-      this.removeTrack= this.removeTrack.bind(this);       
+      super(props); //A constructor passing props to the super class constructor
 
+      this.addTrack= this.addTrack.bind(this);
+      this.removeTrack= this.removeTrack.bind(this);  
     }
+
     {/*end of creating the Track Functions, Now I define each below*/}
 
     addTrack(event){
         this.props.onAdd(this.props.track);
     }
 
-    removeTrack(){
+    removeTrack(event){
         this.props.onRemove(this.state.track);
     }
 
