@@ -1,0 +1,54 @@
+.playlist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    width: 394px;
+    max-height: 559px;
+    padding: 2.27rem 1.14rem;
+    background-color: rgba(45, 23, 23, 0.7);
+    box-shadow: 0 4px 2px 2px #888888;
+}
+
+.playlist input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid #efefef;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.playlist-save {
+    cursor: pointer;
+    width: 100%;
+    padding: 0.77rem 0;
+    border-radius: 54px;
+    border-width: 0px;
+    margin-top: 1.27rem;
+    background-color: #f1d094;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.15rem;
+    transition: background-color 0.25s;
+    color: #171717;
+    font-weight: 500;
+}
+
+.playlist-save:hover {
+    background-color: rgba(45, 233, 129, 0.7);
+}
+
+::-webkit-scrollbar {
+    background: transparent;
+}
+
+@media only screen and (max-width:1020px){
+    .playlist{
+        width: 90%;
+    }    
+}
+
+/*Playlist.css done*/
