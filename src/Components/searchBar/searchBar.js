@@ -13,7 +13,7 @@ class searchBar extends React.Element{
       this.handleEnter = this.handleEnter.bind(this);      
 
     }
-    {/*end of creating the searchBar Functions, Now I define each below*/}
+    /*end of creating the searchBar Functions, Now I define each below*/
 
     handleTermChange(event){
         this.setState({term:event.target.value});
@@ -24,7 +24,7 @@ class searchBar extends React.Element{
     handleEnter(event){
         if(event.keyCode === 13){
             this.search();
-        } {/*keyCode === 13 is the data that the user enters, e.g here i3 means pressing the enter Key*/}
+        } /*keyCode === 13 is the data that the user enters, e.g here i3 means pressing the enter Key*/
     }
 
 
